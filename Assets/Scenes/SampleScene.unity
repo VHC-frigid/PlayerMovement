@@ -349,7 +349,7 @@ GameObject:
   - component: {fileID: 458265636}
   - component: {fileID: 458265635}
   - component: {fileID: 458265634}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -397,7 +397,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 406e8914a5475944d8f42d625372a5b6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -690,6 +690,10 @@ MonoBehaviour:
   playerTransform: {fileID: 361358161}
   verticalRotationMin: 0
   verticalRotationMax: 75
+  camerZoom: 20
+  avoidLayer:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
