@@ -14,7 +14,7 @@ public class CustomController : MonoBehaviour
     [SerializeField] private float gravity;
 
     //this will hold a reference to our camer's anchor point
-    [SerializeField] private GameObject cameraAnchor;
+    //[SerializeField] private GameObject cameraAnchor;
 
     [SerializeField] private LayerMask groudMask;
 
@@ -37,6 +37,9 @@ public class CustomController : MonoBehaviour
     {
         //get the playe inputs and store in a variable       
         inputThisFrame = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        
+        //inputthisFrame.normalised - gives us the noralized vector, without changing the vector itself
+        inputThisFrame.Normalize();
 
         //refresh our movement to (0,0,0)
         movementThisFrame = new Vector3();
@@ -80,11 +83,9 @@ public class CustomController : MonoBehaviour
         //run our Movw instructions, using the direction we worke out
         Move(movementThisFrame);
 
-
-        cameraAnchor.transform.position = transform.position;
     }
 
-    private void Move(Vector3 moveDirection)
+    protected virtual void Move(Vector3 moveDirection)
     {
         rb.velocity = moveDirection;
     }
